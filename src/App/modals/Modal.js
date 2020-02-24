@@ -27,7 +27,7 @@ class Modal extends React.Component {
     return ReactDOM.createPortal(
       <Fragment>
         <div className="background" onClick={this.props.onClose}/>
-        <div className="modal">
+        <div className="modal-view">
           <button className="modal__close" onClick={this.props.onClose} >
             &times;
           </button>

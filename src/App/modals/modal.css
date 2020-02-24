@@ -8,7 +8,9 @@
   z-index: 9;
 }
 
-.modal {
+
+
+.modal-view {
   animation: slide-in .15s ease-in;
   background-color: white;
   border-radius: 0px;

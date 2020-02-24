@@ -1,0 +1,9 @@
+.itemList{
+  margin: 3px;
+  height: 20%;
+  width: 20%;
+  background-color: black;
+  border: 2px;
+  border-color: white;
+  color: white;
+}
