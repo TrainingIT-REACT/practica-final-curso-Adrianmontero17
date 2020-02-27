@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import AreaInterna from "./areaInterna";
 
 const inicio = ({ user }) => {
-  if (user === "") {
+  if (user === "" || user === undefined) {
     return <Portada> </Portada>;
   } else {
     return <AreaInterna />;
@@ -13,7 +13,7 @@ const inicio = ({ user }) => {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user.user
   };
 };
 

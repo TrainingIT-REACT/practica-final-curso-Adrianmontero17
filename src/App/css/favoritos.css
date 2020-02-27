@@ -1,0 +1,31 @@
+.itemFavList{
+    margin: 3px;
+    height: 70px;
+    width: 20%;
+    background-color: black;
+    border: 2px;
+    border-color: white;
+    color: white;
+    border-radius: 16px;
+    border-style: groove;
+    cursor:pointer;
+}
+.item{
+    font-size: small;
+    color: azure; 
+}
+.header{
+    color: lightgrey;
+}
+
+h1{
+    color: lightgrey;
+}
+
+h2{ 
+    color: lightgrey;
+}
+
+.favsAlbum {
+    height: 50%;
+}

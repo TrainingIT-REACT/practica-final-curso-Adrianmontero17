@@ -1,24 +1,55 @@
 import React, {Fragment} from "react";
 import ItemList from "./itemList";
+import { connect } from "react-redux";
+import { NavLink} from "react-router-dom";
+import {addFav} from "../actions/albums";
 
-let listaAlbun ;
 
-fetch("http://localhost:3001/albums")
-.then((res) => {res.json()})
-.then((json => listaAlbun = json))
+const Albums = ({albumsList, addFav}) => {
 
-console.log(listaAlbun);
-const Albums = () => {
+  const fav = (album) => {
+    console.log("PRUB ->" +album);
+    addFav(album);
+  }
 
-  return(
+
+  if(albumsList ==="" || albumsList===undefined){
+    return (<Fragment>Cargando</Fragment>);
+  }else{
+    return(
       <Fragment>
-        {listaAlbun.map((album,i) => (
-          <ItemList name1={album.name} name2={album.artist}/>
-        ))}
-      </Fragment>
-  );
+        <div className="row col-12">
+          <h1>Albums:</h1>
+        </div>
+        <div className="col-12 row">
+          {albumsList.map((album,i) => (
+            <div  className="itemList col-3"  onClick={(e) => fav(album)} key={album.id}>
+              <NavLink to={"/detalleAlbum/" + album.id} key={album.id} >
+                <ItemList key={album.id} name1={album.name} name2={album.artist}/>
+              </NavLink>
+            </div>
+            ))}
+        </div>
+      </Fragment>	
+    );
+  }
+  
 
 }
 
+const mapStateToProps = (state) => {
+  return {
+    albumsList: state.albums.list
+  };
+}
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    addFav: (album) => dispatch(addFav(album))
+  }
+}
 
-export default Albums;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Albums);

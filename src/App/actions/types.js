@@ -1,4 +1,4 @@
-const actions = ["LOGGIN","EXIT"];
+const actions = ["LOGGIN","EXIT","GET_ALBUMS","GET_SONGS","FAV_ALBUM","FAV_SONG"];
 
 const actionsTypes = []
 actions.forEach(action => {

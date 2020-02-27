@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Fragment} from "react";
 
 //CSS
 import "../css/itemList.css";
@@ -6,10 +6,10 @@ import "../css/itemList.css";
 
 const ItemList = ({name1,name2}) => {
   return (
-    <div className="itemList">
+    <Fragment >
       <h1>{name1}</h1>
       <h2>{name2}</h2>
-    </div>
+    </Fragment>
   );
 
 }

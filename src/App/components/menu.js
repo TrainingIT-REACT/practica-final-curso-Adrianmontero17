@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-//import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 //CSS
 import "../css/menu.css";
@@ -11,26 +11,24 @@ import "../css/menu.css";
 
 const menu = ({ user }) => {
   return (
-    <div class="vertical-menu">
-      <a href="#" className="active">
+    <div className="vertical-menu">
+      <NavLink to="/" activeClassName="active" >
         {user}
-      </a>
-      <a href="#" onClick="">
+      </NavLink>
+      <NavLink to="/albums" activeClassName="active"/*onClick=""*/>
         Álbums
-      </a>
-      <a href="#" onClick="">
+      </NavLink>
+      <NavLink to="/canciones" activeClassName="active" >
         Canciones
-      </a>
-      <a href="#" onClick="">
-        Artistas
-      </a>
+      </NavLink>
     </div>
   );
 };
 
 const mapStateToProps = state => {
+  console.log("menu LOG " +state.user);
   return {
-    user: state.user
+    user: state.user.user
   };
 };
 

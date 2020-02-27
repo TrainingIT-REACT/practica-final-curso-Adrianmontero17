@@ -1,0 +1,23 @@
+.cover{
+    width: 80%;
+    height: 100%;
+}
+
+.title{
+    color: azure;
+}
+
+
+.info{
+    height: 30%;
+}
+h1{
+    text-align: left !important;
+}
+.header{
+    color: azure;
+}
+
+.song{
+    color: azure;
+}

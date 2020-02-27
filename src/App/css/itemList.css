@@ -6,4 +6,15 @@
   border: 2px;
   border-color: white;
   color: white;
+  border-radius: 16px;
+  border-style: groove;
+  cursor:pointer;
+}
+
+.itemList h1{
+  font-size: medium;
+}
+
+.itemList h2{
+  font-size: small;
 }
