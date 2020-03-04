@@ -8,16 +8,15 @@ import {addFav} from "../actions/albums";
 const Albums = ({albumsList, addFav}) => {
 
   const fav = (album) => {
-    console.log("PRUB ->" +album);
     addFav(album);
   }
-
+ 
 
   if(albumsList ==="" || albumsList===undefined){
     return (<Fragment>Cargando</Fragment>);
   }else{
     return(
-      <Fragment>
+      <div className="col-12">
         <div className="row col-12">
           <h1>Albums:</h1>
         </div>
@@ -30,7 +29,7 @@ const Albums = ({albumsList, addFav}) => {
             </div>
             ))}
         </div>
-      </Fragment>	
+      </div>	
     );
   }
   

@@ -2,6 +2,7 @@ import React, { Component,Fragment } from "react";
 import { ReactComponent as Icon } from "../../logo.svg";
 import Modal from "../modals/Modal";
 import Loggin from "../components/loggin";
+import img from '!!file-loader!../../logo.svg';
 
 class Portada extends Component {
   constructor(props) {
@@ -53,7 +54,7 @@ onClose(){
             Y
           </span>
         </div>
-        <Icon className="logo center" />
+        <img src={img} className="logo center"/>
         <Modal open={this.state.open} onClose={this.onClose} >
           <Loggin/>
         </Modal>

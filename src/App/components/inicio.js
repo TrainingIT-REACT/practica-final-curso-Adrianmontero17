@@ -3,7 +3,9 @@ import Portada from "./portada";
 import { connect } from "react-redux";
 import AreaInterna from "./areaInterna";
 
-const inicio = ({ user }) => {
+
+
+const Inicio = ({ user }) => {
   if (user === "" || user === undefined) {
     return <Portada> </Portada>;
   } else {
@@ -17,4 +19,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(inicio);
+export default connect(mapStateToProps)(Inicio);

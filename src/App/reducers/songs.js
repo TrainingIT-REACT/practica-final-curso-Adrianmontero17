@@ -3,13 +3,13 @@ import { songs } from "../actions/songs.js";
 
 const initialState = {
   list:"",
-  favList:[]
+  favList:[],
+  playSong:""
 }
 
 const reducer = (state = initialState, action) => {
   switch(action.type){
     case types.GET_SONGS:{
-      console.log("GET_SONGS: "+action.songs);
       return {
         ...state,
         list: action.songs.slice(0)
@@ -17,8 +17,13 @@ const reducer = (state = initialState, action) => {
     }
     case types.FAV_SONG:{
       if(state.favList.includes(action.song)){
+        var index = state.favList.indexOf(action.song);
+        var array = state.favList.splice(0);
+        array.splice(index,1);
         return {
-          ...state
+          ...state,
+          favList: array
+          
         }
       }else{
         return{
@@ -28,6 +33,13 @@ const reducer = (state = initialState, action) => {
             action.song
           ]
         }
+      }
+    }
+    case types.PLAY_SONG:{
+
+      return{
+        ...state,
+        playSong: action.song
       }
     }
     default:{

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.4.1",
+    "expect-puppeteer": "^4.4.0",
     "expo-asset": "8.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -13,16 +14,16 @@
     "react-native-web": "0.12.1",
     "react-redux": "6.0.0",
     "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.3",
     "redux": "4.0.5"
   },
   "scripts": {
-    "start": "npm-run-all --parallel client server",
+    "start": "concurrently --kill-others \"yarn start-json-server\" \"yarn start-webpack-dev-server\"",
+    "start-json-server": "json-server --watch server/data.json --static server/static --port 3001",
+    "start-webpack-dev-server": "webpack-dev-server --open --mode=production",
     "client": "react-scripts start",
     "server": "json-server --watch server/data.json --static server/static --port 3001",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:integration": "jest -c integration/jest.config.js",
+    "serve": "yarn build && serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,11 +35,31 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.1.0",
+    "css-loader": "^3.4.2",
     "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "file-loader": "^5.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^6.0.0",
     "jest-enzyme": "^7.0.1",
+    "jest-puppeteer": "^3.8.0",
     "json-server": "^0.14.2",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^1.11.0",
+    "serve": "^10.1.1",
+    "style-loader": "^1.1.3",
+    "svg-url-loader": "^4.0.0",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "workbox-precaching": "^5.0.0",
+    "workbox-webpack-plugin": "^5.0.0"
   },
   "proxy": "http://localhost:3001"
 }

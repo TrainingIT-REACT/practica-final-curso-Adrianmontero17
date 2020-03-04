@@ -10,7 +10,7 @@ const App = () => {
 
     return (
         <Provider store={store}>
-        <div className="App">
+        <div > 
           <Inicio/>
         </div>
         </Provider>

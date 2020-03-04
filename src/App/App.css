@@ -6,6 +6,10 @@
   background-color: rgba(59, 55, 55, 0.933);
 }
 
+.reproductor{
+  color: #61dafb;
+}
+
 .areaInterna {
   display: block;
 }

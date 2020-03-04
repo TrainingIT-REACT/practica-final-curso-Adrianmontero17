@@ -1,0 +1,30 @@
+.list{
+    height: 75vh;
+    font-size: small;
+}
+
+.scroller {
+    overflow-y: scroll;
+    scrollbar-color: darkgray rgba(59, 55, 55, 0.933);
+    scrollbar-width: thin;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(59, 55, 55, 0.933); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: darkgray; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: darkgray; 
+  }

@@ -8,7 +8,7 @@ const store = createStore(
     combineReducers({
         user,
         albums,
-        songs
+        songs 
     })
 );
 

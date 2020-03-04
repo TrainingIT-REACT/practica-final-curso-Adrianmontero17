@@ -5,17 +5,14 @@ import { NavLink} from "react-router-dom";
 //CSS
 import "../css/menu.css";
 
-//const onClick = (e) => {
-
-//}
 
 const menu = ({ user }) => {
   return (
     <div className="vertical-menu">
-      <NavLink to="/" activeClassName="active" >
+      <NavLink exact to="/" activeClassName="active" >
         {user}
       </NavLink>
-      <NavLink to="/albums" activeClassName="active"/*onClick=""*/>
+      <NavLink to="/albums" activeClassName="active">
         Álbums
       </NavLink>
       <NavLink to="/canciones" activeClassName="active" >
@@ -26,7 +23,6 @@ const menu = ({ user }) => {
 };
 
 const mapStateToProps = state => {
-  console.log("menu LOG " +state.user);
   return {
     user: state.user.user
   };
